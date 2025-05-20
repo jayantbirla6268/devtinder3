@@ -14,3 +14,30 @@
  gitignore
  create a remote repo on github
  push all code to remote origin
+ play with routes and route extension ex./hello,/,hello/2/xyz
+ order of the routes matter a lot
+ install postman app and make a workspace/collection>test api call
+ write logic to handle get,post ,patch,delete api calls and test them on postman
+ explore routing and use of ?,+,(),* in the route
+ use of regex in routes/a/ .*fly$/
+ reading the querry params in the routes
+reading the dynamic routes
+
+multiple route handler-play with the code
+next()
+next function and error along with res.send()
+app.use("/route",rH[rh2,rh3],rh4,rh5);
+what is middleware? why do we need it?
+how express js bassically handless require behind the sceness
+difference app.use and app.all
+write a dummy auth middleware for admin
+write a dummy auth middleware for all routes,expect /user/login
+error handling using app.use("/",(err,req,res,next));
+
+
+create a free cluster on mongoDB official website(mongo atlas)
+install mongoose library
+connect your application to the database"connection-url"/dectinder
+call the connectdb function and connect to database before starting application on7777
+create user schema and user model
+

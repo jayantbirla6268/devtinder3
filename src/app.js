@@ -1,28 +1,38 @@
- const express=require("express");
- const app=express();
+ const express = require("express");
+ const connectDB =require("./config/database.js");
+ const app = express();
 
+ const User=require("./\models/user.js");
 
+ app.post("/signup", async (req,res)=>{
   
-
-app.get("/user",(req,res)=>{
-    res.send({first:"jayantbirla",last:"birla"})
+ ////creating new instance  of the user model  
+  const user = new User({
+      firstName:"jayant",
+    lastName:"birla",
+    emailId:"jayantbirla@.com",
+    password:"Jay@123",
+  
+  });
+  try{
+ await user.save();
+ res.send("user added sucessfully");
+  }catch (err){
+    res.status(400).send("error in adding user");
+  }
 });
+ 
+ connectDB()
+ .then(()=>{
+  console.log("database connection established...");
+ app.listen(3000,()=>{
+    console.log("server is sucessfully on port 3000");
 
-app.post("/user",(req,res)=>{
-    //saving data to db
-    res.send("data sucessfully saved to the database");
-});
-//app.use("/test",(req,res)=>{
-    //res.send("hello from the server");
-//});
-
-app.delete("/user",(req,res)=>{
-    res.send("deleted sucessfully")
+   });
 })
-
+.catch((err)=>{
+  console.error("database cannot established")
+});
  
- app.listen(3000,()=>  {
-    console.log("server is sucessfully listining on port 3000...");
-
- });
- 
+  
+   
