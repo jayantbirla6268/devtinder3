@@ -17,6 +17,12 @@ const userSchema = new mongoose.Schema({
     },
     gender: {
         type: String
+    },
+    emailid:{
+        type:String,
+        required:true,
+        
+        match:/.+@.+\..+/,
     }
 });
 
